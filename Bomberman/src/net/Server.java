@@ -1,0 +1,33 @@
+package net;
+
+import java.net.DatagramSocket;
+
+public class Server {
+	
+	private DatagramSocket[] socket;
+	private Thread listener, workers;
+	private int active = 0;
+	private boolean listening;
+	
+	public Server(int port) {
+		DatagramSocket[] connections = new DatagramSocket[3];
+	}
+	public void initialize() {
+		listener = new Thread(() -> listen(), "Listener");
+		
+	}
+	
+	private void listen() {
+		while(listening) {
+			
+		}
+	}
+	
+	
+	public void sendData() {
+		
+	}
+
+	
+	
+}
