@@ -5,7 +5,7 @@ import java.net.DatagramSocket;
 public class Server {
 	
 	private DatagramSocket[] socket;
-	private Thread listener, workers;
+	private Thread listener, worker;
 	private int active = 0;
 	private boolean listening;
 	
@@ -14,7 +14,9 @@ public class Server {
 	}
 	public void initialize() {
 		listener = new Thread(() -> listen(), "Listener");
+		worker = new Thread(() -> process(), "Worker");
 		
+		listener.start();
 	}
 	
 	private void listen() {
@@ -23,7 +25,9 @@ public class Server {
 		}
 	}
 	
-	
+	public void process() {
+		
+	}
 	public void sendData() {
 		
 	}
